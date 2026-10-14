@@ -3,18 +3,18 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Paymenter](https://img.shields.io/badge/Paymenter-v1.x-blue.svg)](https://github.com/Paymenter/Paymenter)
 [![PHP](https://img.shields.io/badge/PHP-8.3%2B-777bb4.svg)](https://www.php.net/)
-[![USDT](https://img.shields.io/badge/USDT-TRC20%20%7C%20ERC20%20%7C%20BEP20-26a17b.svg)](https://pay.snapex.pro)
+[![USDT](https://img.shields.io/badge/USDT-TRC20%20%7C%20ERC20%20%7C%20BEP20%20%7C%20Solana%20%7C%20TON%20%2B-26a17b.svg)](https://pay.snapex.pro)
 
 [English version](README.md)
 
-Расширение-шлюз для [Paymenter](https://github.com/Paymenter/Paymenter), через которое клиенты оплачивают счета в **USDT (TRC20, ERC20, BEP20)** и других монетах с помощью [SnapEX Pay](https://snapex.pro). Когда клиент нажимает «Оплатить», расширение создаёт счёт SnapEX Pay и переводит клиента на страницу оплаты. После подтверждения платежа подписанный вебхук отмечает счёт в Paymenter как оплаченный. Свой кошелёк, ноду или мониторинг блокчейна поднимать не нужно. Деньги поступают на мерчант-баланс SnapEX Pay.
+Расширение-шлюз для [Paymenter](https://github.com/Paymenter/Paymenter), через которое клиенты оплачивают счета в **USDT (TRC20, ERC20, BEP20, Solana, TON, Polygon и другие сети)** и других монетах с помощью [SnapEX Pay](https://snapex.pro). Когда клиент нажимает «Оплатить», расширение создаёт счёт SnapEX Pay и переводит клиента на страницу оплаты. После подтверждения платежа подписанный вебхук отмечает счёт в Paymenter как оплаченный. Свой кошелёк, ноду или мониторинг блокчейна поднимать не нужно. Деньги поступают на мерчант-баланс SnapEX Pay.
 
 > **Подключаетесь к SnapEX Pay?** Мерчант-аккаунт, тарифы и все готовые модули — на **[pay.snapex.pro](https://pay.snapex.pro)**.
 
 ## Возможности
 
 - Штатное расширение Paymenter v1 (`Paymenter\Extensions\Gateways\SnapexPay`). Появляется в **Admin → Gateways**.
-- Страница оплаты SnapEX Pay: USDT в сетях TRC20, ERC20 и BEP20, а также другие монеты, которые там доступны.
+- Страница оплаты SnapEX Pay: USDT в сетях TRC20, ERC20, BEP20, Solana, TON и других, а также другие монеты, которые там доступны.
 - Вебхук проверяется по HMAC-SHA256 (`Webhook-Signature`) со сравнением за постоянное время. Если метка времени расходится больше чем на 5 минут, запрос отклоняется.
 - Телу вебхука расширение не доверяет. Перед зачислением оно перечитывает счёт из API SnapEX вашим ключом.
 - Платёж записывается один раз. Повторный вебхук не создаёт вторую транзакцию и не меняет первую.

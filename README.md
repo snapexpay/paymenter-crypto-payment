@@ -3,18 +3,18 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Paymenter](https://img.shields.io/badge/Paymenter-v1.x-blue.svg)](https://github.com/Paymenter/Paymenter)
 [![PHP](https://img.shields.io/badge/PHP-8.3%2B-777bb4.svg)](https://www.php.net/)
-[![USDT](https://img.shields.io/badge/USDT-TRC20%20%7C%20ERC20%20%7C%20BEP20-26a17b.svg)](https://pay.snapex.pro)
+[![USDT](https://img.shields.io/badge/USDT-TRC20%20%7C%20ERC20%20%7C%20BEP20%20%7C%20Solana%20%7C%20TON%20%2B-26a17b.svg)](https://pay.snapex.pro)
 
 [Русская версия](README.ru.md)
 
-A gateway extension for [Paymenter](https://github.com/Paymenter/Paymenter) that lets clients pay invoices in **USDT (TRC20, ERC20, BEP20)** and other coins through [SnapEX Pay](https://snapex.pro). When a client clicks *Pay*, the extension creates a SnapEX Pay invoice and sends the client to the hosted payment page. Once the payment is confirmed, a signed webhook marks the Paymenter invoice as paid. You don't have to run a wallet, a node or a blockchain watcher. Funds go to your SnapEX Pay merchant balance.
+A gateway extension for [Paymenter](https://github.com/Paymenter/Paymenter) that lets clients pay invoices in **USDT (TRC20, ERC20, BEP20, Solana, TON, Polygon and more)** and other coins through [SnapEX Pay](https://snapex.pro). When a client clicks *Pay*, the extension creates a SnapEX Pay invoice and sends the client to the hosted payment page. Once the payment is confirmed, a signed webhook marks the Paymenter invoice as paid. You don't have to run a wallet, a node or a blockchain watcher. Funds go to your SnapEX Pay merchant balance.
 
 > **Connecting to SnapEX Pay?** Create a merchant account, check the pricing and see every ready-made module on **[pay.snapex.pro](https://pay.snapex.pro)**.
 
 ## Features
 
 - A native Paymenter v1 gateway extension (`Paymenter\Extensions\Gateways\SnapexPay`) that shows up under **Admin → Gateways**.
-- A hosted SnapEX Pay checkout for USDT on TRC20, ERC20 and BEP20, plus other coins offered on the payment page.
+- A hosted SnapEX Pay checkout for USDT on TRC20, ERC20, BEP20, Solana, TON and other networks, plus other coins offered on the payment page.
 - Webhooks are verified with HMAC-SHA256 (`Webhook-Signature`), compared in constant time, and rejected if the timestamp is more than 5 minutes off.
 - The webhook body is never trusted on its own. The invoice is read back from the SnapEX API with your key before any payment is recorded.
 - Payments are recorded once. A repeated or retried webhook doesn't add a second transaction or change the first one.

@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Http;
 
 #[ExtensionMeta(
     name: 'SnapEX Pay',
-    description: 'Accept USDT (TRC20, ERC20, BEP20) and other coins. Customer pays on SnapEX Pay; the invoice is marked paid from a signed webhook.',
+    description: 'Accept USDT (TRC20, ERC20, BEP20, Solana, TON, Polygon and more) and other coins. Customer pays on SnapEX Pay; the invoice is marked paid from a signed webhook.',
     version: '1.1.0',
     author: 'SnapEX',
     url: 'https://pay.snapex.pro/integrations/paymenter',
